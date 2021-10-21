@@ -1,0 +1,87 @@
+@use 'sass:color';
+
+@use '@material/theme/color-palette';
+
+// Svelte Colors!
+@use '@material/theme/index' as theme with
+	(
+		$primary: #ff3e00,
+		$secondary: #676778,
+		$surface: #fff,
+		$background: #fff,
+		$error: color-palette.$red-900
+	);
+
+// Import all the styles for the classes.
+@use '@material/typography/mdc-typography';
+// The following classes become available:
+//   mdc-typography--headline1
+//   mdc-typography--headline2
+//   mdc-typography--headline3
+//   mdc-typography--headline4
+//   mdc-typography--headline5
+//   mdc-typography--headline6
+//   mdc-typography--subtitle1
+//   mdc-typography--subtitle2
+//   mdc-typography--body1
+//   mdc-typography--body2
+//   mdc-typography--caption
+//   mdc-typography--button
+//   mdc-typography--overline
+//   mdc-typography--body1
+
+// Import the mixins.
+@use '@material/typography/index' as typography;
+
+html,
+body {
+	background-color: theme.$surface;
+	color: theme.$on-surface;
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    width: 50px;
+    /* min-width when horizon */
+    height: 50px;
+    /* min-height when vertical */
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: rgb(100, 100, 100);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgb(100, 100, 100);
+}
+
+::-webkit-scrollbar-track-piece {
+    background: rgb(25, 25, 25);
+}
+
+::-webkit-scrollbar-corner {
+    background: black;
+}
+
+
+a {
+	color: #40b3ff;
+}
+
+a:visited {
+	color: color.scale(#40b3ff, $lightness: -35%);
+}
+
